@@ -1,10 +1,11 @@
 import './App.css';
-import HomePage from './home-page/HomePage';
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './home-page/HomePage';
 
 const App = () => {
   document.title = "Wormsties"
+  console.log('did it work???')
   return (
     // <div className="App">
     //   <header className="App-header">
@@ -23,9 +24,9 @@ const App = () => {
     //   </header>
     // </div>
     <BrowserRouter>
-      <Switch>
-          <Route exact path="/" render={() => <HomePage />} />
-      </Switch>
+      <Routes>
+          <Route exact path="/home" element={<HomePage />} /> 
+      </Routes>
     </BrowserRouter>
   );
 }
