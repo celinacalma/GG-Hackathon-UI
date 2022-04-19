@@ -1,14 +1,19 @@
-import React from 'react';
-import { useState } from 'react';
+import React, {useState, useEffect} from 'react';
+import { getAllLanguages } from './HomePageService';
 
 /**
- * @name EditEncounterPage
- * @description Displays a form to edit an existing encounter
+ * @name HomePage
+ * @description Displays the Wormsties home page
  * @return component
  */
 const HomePage = () => {
     const [allLanguages, setAllLanguages] = useState();
-  return (
+
+    useEffect(() => {
+        getAllLanguages(setAllLanguages, setApiError);
+      }, []);
+    
+    return (
     <h1>Welcome to Wormsties 🐛 </h1>
   );
 };
