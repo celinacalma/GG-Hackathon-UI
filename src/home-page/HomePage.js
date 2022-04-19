@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 
 /**
  * @name EditEncounterPage
@@ -6,9 +7,9 @@ import React from 'react';
  * @return component
  */
 const HomePage = () => {
-console.log('wooo');
+    const [allLanguages, setAllLanguages] = useState();
   return (
-    <h1>oof</h1>
+    <h1>Welcome to Wormsties 🐛 </h1>
   );
 };
 export default HomePage;
