@@ -8,7 +8,6 @@ import { getAllLanguages } from './HomePageService';
  */
 const HomePage = () => {
     const [allLanguages, setAllLanguages] = useState();
-
     useEffect(() => {
         getAllLanguages(setAllLanguages, setApiError);
       }, []);
