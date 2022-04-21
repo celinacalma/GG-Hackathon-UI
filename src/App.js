@@ -1,14 +1,15 @@
-import './App.css';
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from './home-page/HomePage';
+import "./App.css";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./home-page/HomePage";
+import "./bootstrap.css";
 
-const App = () => {
-  document.title = "Wormsties"
+function App() {
+  document.title = "Wormsties";
   return (
     <BrowserRouter>
       <Routes>
-          <Route exact path="/" element={<HomePage />} /> 
+        <Route exact path="/" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   );
