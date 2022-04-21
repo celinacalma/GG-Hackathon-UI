@@ -1,4 +1,4 @@
-import Constants from './constants';
+import Constants from "./Constants";
 
 /**
  * @name HttpHelper
@@ -8,11 +8,12 @@ import Constants from './constants';
  * @param {Object} payload object to send
  * @return {Promise} - Promise from the fetch call
  */
-export default (route, method, payload) => fetch(Constants.BASE_URL_API + route, {
-  method,
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${sessionStorage.getItem('token')}`
-  },
-  body: JSON.stringify(payload)
-});
+export default (route, method, payload) =>
+  fetch(Constants.BASE_URL_API + route, {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
+    body: JSON.stringify(payload),
+  });

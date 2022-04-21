@@ -1,5 +1,5 @@
-import Constants from '../../utils/constants';
-import HttpHelper from '../../utils/HttpHelper';
+import Constants from "../utils/Constants";
+import HttpHelper from "../utils/HttpHelper";
 
 /**
  * @name getAllLanguages
@@ -9,8 +9,8 @@ import HttpHelper from '../../utils/HttpHelper';
  * @param {*} setApiError sets error if response other than 200 is returned
  * @returns sets state for languages if 200 response, else sets state for apiError
  */
-export async function getAllLanguages(setAllLanguages, setApiError) {
-  await HttpHelper(Constants.WORMSTIES_ENDPOINT, 'GET')
+export default async function getAllLanguages(setAllLanguages, setApiError) {
+  await HttpHelper(Constants.WORMSTIES_ENDPOINT, "GET")
     .then((response) => {
       if (response.ok) {
         return response.json();
