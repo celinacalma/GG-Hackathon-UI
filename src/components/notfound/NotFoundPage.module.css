@@ -1,6 +1,4 @@
-.backgroundimage {
+.background {
   height: 100vh;
-  background-image: url(https://cdn.dribbble.com/users/329098/screenshots/6563414/404-ill.jpg);
-  background-repeat: no-repeat;
-  margin-left: 20em;
+  background-color: white;
 }

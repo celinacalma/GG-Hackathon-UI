@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './NotFoundPage.module.css';
+import MagnifyingDino from '../../util/logos/magnifyingDino.png';
 
 /**
  * This component renders a styled 404 page.
@@ -6,8 +8,8 @@ import React from 'react';
  */
 function NotFoundPage() {
   return (
-    <div>
-      NOT FOUND NOT FOUND NOT FOUND NOT FOUND
+    <div className={styles.background}>
+      <img src={MagnifyingDino} alt="magnifyingdino" />
     </div>
   );
 }
