@@ -4,60 +4,94 @@ import getAllLanguages from "./HomePageService";
 
 /**
  * @name HomePage
- * @description Displays the Wormsties home page
+ * @description Displays the Indigitales home page
  * @return component
  */
 function HomePage() {
-  const [apiError, setApiError] = useState();
   const [allLanguages, setAllLanguages] = useState();
+  const [apiError, setApiError] = useState();
+  const [cardIsClicked, setCardIsClicked] = useState(false);
   const tempLanguages = [
-    "Japanese",
-    "Tagalog",
-    "Turkish",
-    "Mandarin",
-    "Vietnamese",
-    "Piraha",
+    {
+      primaryName: "Ōlelo Hawai'i",
+      romanizedName: "Hawaiian",
+    },
+    {
+      primaryName: "Nedersassisch",
+      romanizedName: "Low Saxon - West Low German",
+    },
+    {
+      primaryName: "Rromani ćhib",
+      romanizedName: "Romani",
+    },
+    {
+      primaryName: "Tlicho (Dogrib)",
+      romanizedName: "Dogrib",
+    },
+    {
+      primaryName: "Sandu",
+      romanizedName: "Sardinian",
+    },
+    {
+      primaryName: "Gaeilge",
+      romanizedName: "Irish",
+    },
   ];
 
   useEffect(() => {
     getAllLanguages(setAllLanguages, setApiError);
   }, []);
 
+  /**
+   * @name handleCardSelection
+   * @param {*} event click event
+   * Changes card color if selected
+   */
+  const handleCardSelection = (event) => {
+    alert("you clicked on a card!");
+    setCardIsClicked(true);
+  };
+
   return (
-    <>
-      <h1>Welcome to Indigitales 📚 </h1>
-      <h2>Select your language for stories</h2>
-      <form>
-        <fieldset>
-          <div className="form-group">
-            <label htmlFor="exampleSelect1" className="form-label mt-4">
-              Select language
-              <select className="form-select" id="exampleSelect1">
-                {tempLanguages.map((language) => (
-                  <option>{language}</option>
-                ))}
-              </select>
-            </label>
+    <div className="container">
+      <div className="h-stack">
+        <h1>Welcome to Indigitales 📚 </h1>
+        <p>Tap on a language to select</p>
+        {/* <form>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="exampleSelect1" className="form-label mt-4">
+                Select language
+                <select className="form-select" id="exampleSelect1">
+                  {tempLanguages.map((language) => (
+                    <option>{language.primaryName}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+          </fieldset>
+        </form> */}
+
+        {tempLanguages.map((language) => (
+          <div
+            className="card border-primary mb-3"
+            style={{ maxWidth: "20rem" }}
+          >
+            <div className="card-header">{language.romanizedName}</div>
+            <div className="card-body">
+              <h4 className="card-title">{language.primaryName}</h4>
+              {/* <p className="card-text">
+              do we want languages on cards instead of a dropdown?
+            </p> */}
+            </div>
           </div>
-        </fieldset>
+        ))}
 
         <button type="button" className="btn btn-primary">
           Continue{" "}
         </button>
-      </form>
-
-      <div className="card border-primary mb-3" style={{ maxWidth: "20rem" }}>
-        <div className="card-header">Header</div>
-        <div className="card-body">
-          <h4 className="card-title">Turkish</h4>
-          <p className="card-text">
-            the most widely spoken of the Turkic languages, with around 70 to 80
-            million speakers. It is the national language of Turkey and Northern
-            Cyprus{" "}
-          </p>
-        </div>
       </div>
-    </>
+    </div>
   );
 }
 export default HomePage;
