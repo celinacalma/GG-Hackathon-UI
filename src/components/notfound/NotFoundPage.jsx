@@ -9,7 +9,13 @@ import MagnifyingDino from '../../util/logos/magnifyingDino.png';
 function NotFoundPage() {
   return (
     <div className={styles.background}>
-      <img src={MagnifyingDino} alt="magnifyingdino" />
+      <div className={styles.imagecontainer}>
+        <img src={MagnifyingDino} alt="magnifyingdino" />
+        <div className={styles.notfoundtext}>
+          OOPS! THIS PAGE IS
+          NOWHERE TO BE FOUND...
+        </div>
+      </div>
     </div>
   );
 }
