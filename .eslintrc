@@ -1,11 +1,12 @@
-export default {
+{
     "env": {
         "browser": true,
         "es2021": true
     },
     "extends": [
+        "eslint:recommended",
         "airbnb",
-        "plugin:prettier/recommended"
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
