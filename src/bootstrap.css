@@ -1,25 +1,32 @@
 /*
 GG Utility Classes
 */
-.flex-space-around {
-  display: flex;
-  justify-content: space-around
-}
 
+/* Container is meant to hold basically everything on a page
+Keeps the content centered on page and has top bottom margin for potential future headers/footers
+*/
 .container {
-  width: 65%;
-  margin: auto;
+  width: 60%;
+  margin: 10% auto 10%;
   background-color: pink;
 }
 
 .h-stack {
-  margin: auto;
-  background-color: beige;
+  flex-direction: row;
 }
 
 .v-stack {
-
+  align-items: stretch;
+  background-color: burlywood;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  background-color: beige;
+  justify-content: space-around;
+}
+
 /*!
  * Bootswatch v5.1.3
  * Homepage: https://bootswatch.com

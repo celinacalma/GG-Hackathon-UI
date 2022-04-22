@@ -11,6 +11,8 @@ function HomePage() {
   const [allLanguages, setAllLanguages] = useState();
   const [apiError, setApiError] = useState();
   const [cardIsClicked, setCardIsClicked] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState();
+
   const tempLanguages = [
     {
       primaryName: "Ōlelo Hawai'i",
@@ -54,7 +56,7 @@ function HomePage() {
 
   return (
     <div className="container">
-      <div className="h-stack">
+      <div className="v-stack">
         <h1>Welcome to Indigitales 📚 </h1>
         <p>Tap on a language to select</p>
         {/* <form>
@@ -71,21 +73,19 @@ function HomePage() {
             </div>
           </fieldset>
         </form> */}
-
-        {tempLanguages.map((language) => (
-          <div
-            className="card border-primary mb-3"
-            style={{ maxWidth: "20rem" }}
-          >
-            <div className="card-header">{language.romanizedName}</div>
-            <div className="card-body">
-              <h4 className="card-title">{language.primaryName}</h4>
-              {/* <p className="card-text">
-              do we want languages on cards instead of a dropdown?
-            </p> */}
+        <div className="grid">
+          {tempLanguages.map((language) => (
+            <div
+              className="card border-primary mb-3"
+              style={{ maxWidth: "20rem" }}
+            >
+              <div className="card-header">{language.romanizedName}</div>
+              <div className="card-body">
+                <h4 className="card-title">{language.primaryName}</h4>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
 
         <button type="button" className="btn btn-primary">
           Continue{" "}
