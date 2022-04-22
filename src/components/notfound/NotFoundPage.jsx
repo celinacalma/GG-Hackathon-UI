@@ -1,12 +1,15 @@
 import React from 'react';
-import styles from './NotFoundPage.module.css';
 
 /**
  * This component renders a styled 404 page.
  * @returns not found page.
  */
-const NotFoundPage = () => (
-  <div className={styles.backgroundimage} data-testid="not-found-page" />
-);
+function NotFoundPage() {
+  return (
+    <div>
+      NOT FOUND NOT FOUND NOT FOUND NOT FOUND
+    </div>
+  );
+}
 
 export default NotFoundPage;

@@ -1,21 +1,23 @@
-import React from "react";
-import 'bootswatch/dist/minty/bootstrap.min.css';
+import React from 'react';
 import {
-  BrowserRouter as Router, Switch, Route, Redirect, 
+  BrowserRouter,
+  Routes,
+  Route,
 } from 'react-router-dom';
-import NotFoundPage from "./components/notfound/NotFoundPage";
+import NotFoundPage from './components/notfound/NotFoundPage';
+import HomePage from './components/homepage/HomePage';
+import LanguagesPage from './components/languages/Languages';
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/languages" component={LanguagesPage} />
-        <Route exact path="/submit" component={SubmissionsPage} />
-        <Route path="/404" exact component={NotFoundPage} />
-        <Redirect to="/404" />
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/languages" element={<LanguagesPage />} />
+        <Route path="/404" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
