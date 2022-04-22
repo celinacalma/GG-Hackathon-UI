@@ -5,7 +5,7 @@ import HomePage from "./home-page/HomePage";
 import "./bootstrap.css";
 
 function App() {
-  document.title = "Wormsties";
+  document.title = "Indigitales";
   return (
     <BrowserRouter>
       <Routes>
