@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
-import getAllLanguages from "./HomePageService";
+import React, { useState, useEffect } from 'react';
+import getAllLanguages from './HomePageService';
 
 /**
  * @name HomePage
@@ -16,27 +16,27 @@ function HomePage() {
   const tempLanguages = [
     {
       primaryName: "Ōlelo Hawai'i",
-      romanizedName: "Hawaiian",
+      romanizedName: 'Hawaiian',
     },
     {
-      primaryName: "Nedersassisch",
-      romanizedName: "Low Saxon - West Low German",
+      primaryName: 'Nedersassisch',
+      romanizedName: 'Low Saxon - West Low German',
     },
     {
-      primaryName: "Rromani ćhib",
-      romanizedName: "Romani",
+      primaryName: 'Rromani ćhib',
+      romanizedName: 'Romani',
     },
     {
-      primaryName: "Tlicho (Dogrib)",
-      romanizedName: "Dogrib",
+      primaryName: 'Tlicho (Dogrib)',
+      romanizedName: 'Dogrib',
     },
     {
-      primaryName: "Sandu",
-      romanizedName: "Sardinian",
+      primaryName: 'Sandu',
+      romanizedName: 'Sardinian',
     },
     {
-      primaryName: "Gaeilge",
-      romanizedName: "Irish",
+      primaryName: 'Gaeilge',
+      romanizedName: 'Irish',
     },
   ];
 
@@ -50,7 +50,7 @@ function HomePage() {
    * Changes card color if selected
    */
   const handleCardSelection = (event) => {
-    alert("you clicked on a card!");
+    alert('you clicked on a card!');
     setCardIsClicked(true);
   };
 
@@ -77,7 +77,8 @@ function HomePage() {
           {tempLanguages.map((language) => (
             <div
               className="card border-primary mb-3"
-              style={{ maxWidth: "20rem" }}
+              style={{ maxWidth: '20rem' }}
+              key={language}
             >
               <div className="card-header">{language.romanizedName}</div>
               <div className="card-body">
@@ -88,7 +89,8 @@ function HomePage() {
         </div>
 
         <button type="button" className="btn btn-primary">
-          Continue{" "}
+          Continue
+          {' '}
         </button>
       </div>
     </div>
