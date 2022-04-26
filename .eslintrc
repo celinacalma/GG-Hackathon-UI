@@ -1,3 +1,4 @@
+<<<<<<< HEAD:.eslintrc.js
 module.exports = {
   env: {
     browser: true,
@@ -18,6 +19,17 @@ module.exports = {
       {
         extensions: [".js", ".jsx"],
       },
+=======
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "airbnb",
+        "plugin:react/recommended"
+>>>>>>> 985a6b57de046ccd71d93a1e7cdcb82aa1ed347c:.eslintrc
     ],
   },
 };
