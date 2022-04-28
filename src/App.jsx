@@ -7,7 +7,7 @@ import {
 import NotFoundPage from './components/notfound/NotFoundPage';
 import HomePage from './components/homepage/HomePage';
 import LanguagesPage from './components/languages/Languages';
-import Stories from './components/stories/Stories';
+import StoriesPage from './components/stories/StoriesPage';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/languages" element={<LanguagesPage />} />
-        <Route path="/stories" element={<Stories />} />
+        <Route path="/stories" element={<StoriesPage />} />
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
